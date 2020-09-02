@@ -21,10 +21,12 @@ class DetailDish extends Component{
         if(comments){
             const commentList = comments.map((comment)=>{
                 return(
-                    <li key={comment.id}>
-                        <p>{comment.comment}</p>
-                        -- <p>{comment.author} , {comment.date}</p>
-                    </li>
+                    <div class="container">
+                        <li key={comment.id}>
+                            <p>{comment.comment}</p>
+                            -- <p>{comment.author} , {comment.date}</p>
+                        </li>
+                    </div>
                 );
             });
             return(
@@ -45,10 +47,12 @@ class DetailDish extends Component{
     render(){
         if(this.props.dish){
             return(
-                <div className="row">
-                    {this.renderDish(this.props.dish)}
-                    {this.renderComments(this.props.dish.comments)}
-                </div> 
+                <div className=" container">
+                    <div className="row ">
+                        {this.renderDish(this.props.dish)}
+                        {this.renderComments(this.props.dish.comments)}
+                    </div> 
+                </div>
             );
         }else{}
             return(
